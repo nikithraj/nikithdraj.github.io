@@ -37,6 +37,8 @@ function getWeatherData() {
       longitude
     } = success.coords;
 
+    document.body.style.background = "url('https://source.unsplash.com/1600x900/?landscape')"
+
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
       console.log(data)
